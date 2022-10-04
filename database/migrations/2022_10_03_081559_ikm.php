@@ -19,7 +19,9 @@ return new class extends Migration
             $t->uuid('ikm_id')->primary();
             $t->uuid('opd_id')->nullable();
             $t->text('nama_ikm')->nullable();
+            $t->timestamps();
         });
+        DB::statement('ALTER TABLE ikm ALTER COLUMN ikm_id SET DEFAULT uuid_generate_v4();');
     }
 
     /**

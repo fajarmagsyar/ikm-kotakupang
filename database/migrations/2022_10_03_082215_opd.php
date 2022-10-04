@@ -18,9 +18,12 @@ return new class extends Migration
         Schema::create('opd', function (Blueprint $t) {
             $t->uuid('opd_id')->primary();
             $t->text('nama_opd')->nullable();
+            $t->text('nama_singkat')->nullable();
             $t->text('alamat')->nullable();
             $t->text('nama_kepala')->nullable();
+            $t->timestamps();
         });
+        DB::statement('ALTER TABLE opd ALTER COLUMN opd_id SET DEFAULT uuid_generate_v4();');
     }
 
     /**

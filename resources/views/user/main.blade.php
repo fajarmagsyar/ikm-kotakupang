@@ -106,6 +106,10 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"
+        integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/assets/vendor/aos/aos.js"></script>
     <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -115,6 +119,17 @@
 
     <!-- Template Main JS File -->
     <script src="/assets/js/main.js"></script>
+
+    @if (session()->has('success'))
+        <script>
+            Swal.fire({
+                title: "Berhasil 🎉",
+                text: "{{ session('success') }}",
+                icon: "success",
+                confirmButtonText: "Ok",
+            });
+        </script>
+    @endif
 </body>
 
 </html>

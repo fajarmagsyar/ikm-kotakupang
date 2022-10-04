@@ -20,9 +20,11 @@ return new class extends Migration
             $t->uuid('opd_id')->nullable();
             $t->text('nama')->nullable();
             $t->text('mail')->nullable();
-            $t->text('pwd')->nullable();
+            $t->text('password')->nullable();
             $t->text('nohp')->nullable();
+            $t->timestamps();
         });
+        DB::statement('ALTER TABLE admin ALTER COLUMN admin_id SET DEFAULT uuid_generate_v4();');
     }
 
     /**
@@ -32,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ikm');
+        Schema::dropIfExists('admin');
     }
 };

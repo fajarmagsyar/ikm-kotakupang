@@ -18,4 +18,9 @@ class IkmJawab extends Model
      * @var string[]
      */
     protected $guarded = ['ikm_jawab_id'];
+
+    static public function countJawaban($id)
+    {
+        return IkmJawab::where('opd_id', $id)->count();
+    }
 }

@@ -17,9 +17,11 @@ return new class extends Migration
         DB::statement('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";');
         Schema::create('ikm_jawab', function (Blueprint $t) {
             $t->uuid('ikm_jawab_id')->primary();
-            $t->uuid('ikm_id')->nullable();
+            $t->uuid('opd_id');
             $t->longText('isi')->nullable();
+            $t->timestamps();
         });
+        DB::statement('ALTER TABLE ikm_jawab ALTER COLUMN ikm_jawab_id SET DEFAULT uuid_generate_v4();');
     }
 
     /**
