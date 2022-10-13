@@ -35,7 +35,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
 
-                    <li><a class="nav-link scrollto" href="#opd-terbaik">OPD Terbaik</a></li>
+                    {{-- <li><a class="nav-link scrollto" href="#opd-terbaik">OPD Terbaik</a></li> --}}
                     <li><a class="nav-link scrollto" href="/contact">Hubungi Kami</a></li>
                     <li>
                         <a class="getstarted scrollto" href="/list-opd">List OPD</a>

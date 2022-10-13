@@ -21,6 +21,7 @@ return new class extends Migration
             $t->text('nama_singkat')->nullable();
             $t->text('alamat')->nullable();
             $t->text('nama_kepala')->nullable();
+            $t->text('logo')->nullable();
             $t->timestamps();
         });
         DB::statement('ALTER TABLE opd ALTER COLUMN opd_id SET DEFAULT uuid_generate_v4();');

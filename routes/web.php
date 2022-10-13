@@ -28,4 +28,7 @@ Route::get('/admn/lgn-page', [AuthController::class, 'loginPage']);
 Route::prefix('admn')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard']);
     Route::get('/data-kuisioner', [AdminController::class, 'dataKuisioner']);
+    Route::get('/data-kuisioner/print/{id}', [AdminController::class, 'printKuisioner']);
+    Route::get('/qrcode/print/{id}', [AdminController::class, 'printQR']);
+    Route::post('/dashboard/profile-edit', [AdminController::class, 'profileEdit']);
 });

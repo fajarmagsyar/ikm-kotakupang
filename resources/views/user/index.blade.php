@@ -18,11 +18,11 @@
 
     <main id="main">
         <!-- ======= About Section ======= -->
-        <section id="opd-terbaik" class="about">
+        {{-- <section id="opd-terbaik" class="about">
             <div class="container">
                 <div class="section-title">
                     <h1 class="icon"><i class="bx bx-medal"></i></h1>
-                    <h2 style="color: white">OPD Terbaik</h2>
+                    <h2 style="color: white">OPD Responden Terbanyak</h2>
                     <p>
                         Organisasi Pemerintah Daerah dengan layanan terbaik di Kota Kupang
                         menurut penilaian masyarakat
@@ -85,6 +85,6 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- End About Section -->
     @endsection

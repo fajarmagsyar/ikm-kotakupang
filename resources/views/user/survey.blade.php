@@ -121,7 +121,8 @@
                                                     </div>
                                                     <div class="col-sm-12 col-lg-6">
                                                         <div class="form-floating mb-3">
-                                                            <input type="hidden" value="Jenis Kelamin" name="q_jk">
+                                                            <input type="hidden" value="Pekerjaan Utama"
+                                                                name="q_pekerjaan">
                                                             <select name="pekerjaan_utama" class="form-select"
                                                                 id="pekerjaan_utama" placeholder="Jenis Kelamin">
                                                                 <option value="PNS/TNI/POLRI">PNS/TNI/POLRI</option>

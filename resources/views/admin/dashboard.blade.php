@@ -28,11 +28,15 @@
                     <div class="card">
                         <div class="card-body">
                             <center class="m-t-30"> <img src="/assets/img/logo.png" class="rounded-circle" width="150" />
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#gantiFotoModal">
+                                    <h6 class="card-subtitle"><i class="mdi mdi-pencil"></i> Edit Logo</h6>
+                                </a>
                                 <h4 class="card-title m-t-10">{{ $opd->nama_singkat }}</h4>
                                 <h6 class="card-subtitle">{{ $opd->nama_opd }}</h6>
                                 <div class="row text-center justify-content-md-center">
                                     <div class="col-4">
-                                        <font class="font-medium"><i class="mdi mdi-account"></i> 254 Responden
+                                        <font class="font-medium"><i class="mdi mdi-account"></i> {{ $opd->total }}
+                                            Responden
                                         </font>
                                     </div>
                                 </div>
@@ -52,12 +56,16 @@
                     <div class="card">
                         <div class="card-body">
                             <h5>Data Admin</h5>
-                            <form class="form-horizontal form-material mx-2">
+                            <form class="form-horizontal form-material mx-2" action="/admn/dashboard/profile-edit"
+                                method="post">
+                                @csrf
+                                <input type="hidden" name="admin_id" value="{{ auth()->user()->admin_id }}">
+                                <input type="hidden" name="opd_id" value="{{ auth()->user()->opd_id }}">
                                 <div class="form-group">
                                     <label class="col-md-12">Nama Admin</label>
                                     <div class="col-md-12">
                                         <input type="text" value="{{ auth()->user()->nama }}"
-                                            class="form-control form-control-line">
+                                            class="form-control form-control-line" name="nama" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -65,13 +73,21 @@
                                     <div class="col-md-12">
                                         <input type="email" placeholder="contoh@kupangkota.go.id"
                                             value="{{ auth()->user()->mail }}" class="form-control form-control-line"
-                                            name="example-email" id="example-email">
+                                            name="example-email" id="example-email" name="mail" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="example-email" class="col-md-12">No HP</label>
+                                    <div class="col-md-12">
+                                        <input type="number" placeholder="082XXXXXXXXX" value="{{ auth()->user()->nohp }}"
+                                            class="form-control form-control-line" name="example-email" id="example-email"
+                                            name="nohp" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Password</label>
                                     <div class="col-md-12">
-                                        <input type="password" value="password" class="form-control form-control-line">
+                                        <input type="password" class="form-control form-control-line" name="password">
                                     </div>
                                     <span class="text-sm text-muted">*Kosongi jika tidak ingin mengubah
                                         password</span>
@@ -82,27 +98,27 @@
                                     <label class="col-md-12">Nama OPD</label>
                                     <div class="col-md-12">
                                         <input type="text" value="{{ $opd->nama_opd }}"
-                                            class="form-control form-control-line">
+                                            class="form-control form-control-line" name="nama_opd" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Nama Singkat</label>
                                     <div class="col-md-12">
                                         <input type="text" value="{{ $opd->nama_singkat }}"
-                                            class="form-control form-control-line">
+                                            class="form-control form-control-line" name="nama_singkat" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Alamat</label>
                                     <div class="col-md-12">
-                                        <textarea rows="3" class="form-control form-control-line">{{ $opd->alamat }}</textarea>
+                                        <textarea name="alamat" required rows="3" class="form-control form-control-line">{{ $opd->alamat }}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Nama Kepala</label>
                                     <div class="col-md-12">
                                         <input type="text" value="{{ $opd->nama_kepala }}"
-                                            class="form-control form-control-line">
+                                            class="form-control form-control-line" name="nama_kepala">
                                     </div>
                                 </div>
                                 <div class="form-group">

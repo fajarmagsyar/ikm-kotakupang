@@ -31,7 +31,7 @@
                             <h6 class="card-subtitle">{{ $opd->nama_singkat }}</h6>
                             <div class="row">
                                 <div class="col-4">
-                                    <font class="font-medium"><i class="mdi mdi-account"></i> 254 Responden
+                                    <font class="font-medium"><i class="mdi mdi-account"></i> {{ $opd->total }} Responden
                                     </font>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                         <hr>
                         <div class="row px-4">
                             <div class="col-sm-12 col-lg-6 mx-auto">
-                                <a href="#createQR">
+                                <a href="/admn/data-kuisioner/print/{{ auth()->user()->opd_id }}">
                                     <div class="card bg-orange" style="border-radius: 20px">
                                         <div class="card-body text-center text-white">
                                             <i class="mdi mdi-file-document" style="font-size: 40px"></i>
@@ -49,7 +49,7 @@
                                 </a>
                             </div>
                             <div class="col-sm-12 col-lg-6 mx-auto">
-                                <a href="#createQR">
+                                <a href="/admn/qrcode/print/{{ auth()->user()->opd_id }}">
                                     <div class="card bg-primary" style="border-radius: 20px">
                                         <div class="card-body text-center text-white">
                                             <i class="mdi mdi-qrcode-scan" style="font-size: 40px"></i>

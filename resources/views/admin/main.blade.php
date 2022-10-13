@@ -30,12 +30,11 @@
                 <div class="navbar-header" data-logobg="skin5">
                     <a class="navbar-brand" href="index.html">
                         <b class="logo-icon">
-                            <img src="/admin/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <img src="/admin/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            <img src="/assets/img/logo.png" style="width: 40px" alt="homepage" class="dark-logo" />
+                            <img src="/assets/img/logo.png" style="width: 40px" alt="homepage" class="light-logo" />
                         </b>
                         <span class="logo-text">
-                            <img src="/admin/images/logo-text.png" alt="homepage" class="dark-logo" />
-                            <img src="/admin/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                            <h4 style="margin-bottom: 0px">IKM | Admin</h4>
                         </span>
                     </a>
                     <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
